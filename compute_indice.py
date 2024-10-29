@@ -27,7 +27,7 @@ import matplotlib.pyplot as plt
 
 
 #--------------------------------------------------------------------------------------------------------------------------------------------------
-def compute_spectrogram(file, windowLength=512, windowHop= 256, scale_audio=True, square=True, windowType='hanning', centered=False, normalized = False ):
+def compute_spectrogram(file, windowLength=512, windowHop= 256, scale_audio=True, square=True, windowType='hamming', centered=False, normalized = False ):
     """
     Compute a spectrogram of an audio signal.
     Return a list of list of values as the spectrogram, and a list of frequencies.

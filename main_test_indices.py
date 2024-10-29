@@ -90,7 +90,7 @@ if __name__ == '__main__':
             methodToCall = globals().get(ci[index_name]['function'])
             freq_band_Hz = ci[index_name]['arguments']['max_freq'] / ci[index_name]['arguments']['freq_step']
             windowLength = int(file.sr / freq_band_Hz)
-            spectro,_ = compute_spectrogram(file, windowLength=windowLength, windowHop= windowLength, scale_audio=True, square=False, windowType='hanning', centered=False, normalized= False )
+            spectro,_ = compute_spectrogram(file, windowLength=windowLength, windowHop= windowLength, scale_audio=True, square=False, windowType='hamming', centered=False, normalized= False )
             main_value = methodToCall(spectro, freq_band_Hz, **ci[index_name]['arguments'])
             file.indices[index_name] = Index(index_name, main_value=main_value)
 
@@ -100,7 +100,7 @@ if __name__ == '__main__':
             methodToCall = globals().get(ci[index_name]['function'])
             freq_band_Hz = ci[index_name]['arguments']['max_freq'] / ci[index_name]['arguments']['freq_step']
             windowLength = int(file.sr / freq_band_Hz)
-            spectro,_ = compute_spectrogram(file, windowLength=windowLength, windowHop= windowLength, scale_audio=True, square=False, windowType='hanning', centered=False, normalized= False )
+            spectro,_ = compute_spectrogram(file, windowLength=windowLength, windowHop= windowLength, scale_audio=True, square=False, windowType='hamming', centered=False, normalized= False )
             main_value = methodToCall(spectro, freq_band_Hz, **ci[index_name]['arguments'])
             file.indices[index_name] = Index(index_name, main_value=main_value)
 
@@ -177,7 +177,7 @@ if __name__ == '__main__':
             methodToCall = globals().get(ci[index_name]['function'])
             freq_band_Hz = ci[index_name]['arguments']['max_freq'] / ci[index_name]['arguments']['freq_step']
             windowLength = int(file.sr / freq_band_Hz)
-            spectro,_ = compute_spectrogram(file, windowLength=windowLength, windowHop= windowLength, scale_audio=True, square=False, windowType='hanning', centered=False, normalized= False )
+            spectro,_ = compute_spectrogram(file, windowLength=windowLength, windowHop= windowLength, scale_audio=True, square=False, windowType='hamming', centered=False, normalized= False )
             spectro_noise_removed = remove_noiseInSpectro(spectro, **ci[index_name]['remove_noiseInSpectro'])
             main_value = methodToCall(spectro_noise_removed, freq_band_Hz, **ci[index_name]['arguments'])
             file.indices[index_name] = Index(index_name, main_value=main_value)
@@ -188,7 +188,7 @@ if __name__ == '__main__':
             methodToCall = globals().get(ci[index_name]['function'])
             freq_band_Hz = ci[index_name]['arguments']['max_freq'] / ci[index_name]['arguments']['freq_step']
             windowLength = int(file.sr / freq_band_Hz)
-            spectro,_ = compute_spectrogram(file, windowLength=windowLength, windowHop= windowLength, scale_audio=True, square=False, windowType='hanning', centered=False, normalized= False )
+            spectro,_ = compute_spectrogram(file, windowLength=windowLength, windowHop= windowLength, scale_audio=True, square=False, windowType='hamming', centered=False, normalized= False )
             spectro_noise_removed = remove_noiseInSpectro(spectro, **ci[index_name]['remove_noiseInSpectro'])
             main_value = methodToCall(spectro_noise_removed, freq_band_Hz, **ci[index_name]['arguments'])
             file.indices[index_name] = Index(index_name, main_value=main_value)
